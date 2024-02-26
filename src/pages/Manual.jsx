@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import image1 from "/Users/ameet/SIH-2023/src/assets/landingChatbot.jpeg";
+import image1 from "../assets/landingChatbot.jpeg";
 const Manual = () => {
   return (
     <div className="flex flex-col bg-zinc-200 h-max p-10">

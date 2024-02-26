@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import image from "/Users/ameet/SIH-2023/src/assets/better.png";
+import image from "../assets/better.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
