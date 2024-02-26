@@ -37,7 +37,7 @@ export const TranslateInterface = () => {
   const [suggestions, setSuggestions] = useState([]);
 
   const mimeType = "audio/webm";
-  const ngrokurl = "https://9789-34-124-187-173.ngrok-free.app";
+  const ngrokurl = "https://d375-35-223-72-218.ngrok-free.app";
   //in built api reference
   const mediaRecorder = useRef(null);
 
@@ -180,7 +180,7 @@ export const TranslateInterface = () => {
         const response = await fetch(ngrokurl + "/transcribe/", {
           method: "POST",
           headers: {
-            token: localStorage.getItem("access_token"),
+            // token: localStorage.getItem("access_token"),
           },
           body: formData,
         });
@@ -278,7 +278,7 @@ export const TranslateInterface = () => {
         style={{ maxHeight: "calc(100vh - 160px)", overflow: "auto" }}
         ref={chatContainerRef}
       >
-        {messages.map((message, index) => (
+        {messages.map((message, index) => ( 
           <TranslateMessage
             key={index}
             type={message.type}

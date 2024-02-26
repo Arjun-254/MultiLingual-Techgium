@@ -47,16 +47,58 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
+
+        <div className="flex flex-row w-full">
+          <div className="flex lg:flex-1 ">
+            <a className="p-2 bg-gradient-to-r from-gray-50 via-gray-100 to-gray-200 rounded-lg">
+              <a
+                className="text-md md:text-xl font-bold flex tracking-tight bg-gradient-to-r from-blue-400 to-indigo-700 bg-clip-text text-transparent "
+                onClick={() => navigate("/")}
+              >
+                LinguaLect
+              </a>
+            </a>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            <a
+              className="text-md font-semibold leading-6 text-gray-200 hover:font-extrabold hover:shadow-xl transition-all ease-in duration-100 p-2 rounded-lg"
+              onClick={() => navigate("/")}
+            >
+              Home
+            </a>
+            <a
+              className="text-md font-semibold leading-6 text-gray-200 hover:font-extrabold hover:shadow-xl transition-all ease-in duration-100 p-2 rounded-lg"
+              onClick={() => navigate("/Translate")}
+            >
+              Translator
+            </a>
+            <a
+              className="text-md font-semibold leading-6 text-gray-200 hover:font-extrabold hover:shadow-xl transition-all ease-in duration-100 p-2 rounded-lg"
+              onClick={() => {
+                navigate("/Manual");
+              }}
+            >
+              User Manual
+            </a>
+          </div>
+          </div>
+
+
+          {/* <div className="flex felx-col justify-between">
           <div
             onClick={() => {
               navigate("/");
             }}
+            className="flex"
           >
             <img
               src={image}
               alt="indian rail logo"
               className="h-12 top-2 left-3 absolute"
             />
+            <div className="bg-white text-blue-400 rounded-md p-1">
+              LinguaLect
+            </div>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             <a
@@ -67,8 +109,16 @@ export default function Navbar() {
             >
               Home
             </a>
+            <a
+              className="text-md font-semibold leading-6 text-gray-200 hover:font-extrabold hover:shadow-xl transition-all ease-in duration-100 p-2 rounded-lg "
+              onClick={() => {
+                navigate("/translate");
+              }}
+            >
+              Translator
+            </a>
 
-            {/* <a  className="text-sm font-semibold leading-6 text-gray-200 hover:font-extrabold hover:shadow-xl transition-all ease-in duration-100 p-2 rounded-lg">Find Jobs</a>*/}
+            <a  className="text-sm font-semibold leading-6 text-gray-200 hover:font-extrabold hover:shadow-xl transition-all ease-in duration-100 p-2 rounded-lg">Find Jobs</a>
 
             <a
               className="text-md font-semibold leading-6 text-gray-200 hover:font-extrabold hover:shadow-xl transition-all ease-in duration-100 p-2 rounded-lg"
@@ -79,7 +129,8 @@ export default function Navbar() {
               User Manual
             </a>
           </div>
-          {!isLoggedIn && (
+          </div> */}
+          {/* {!isLoggedIn && (
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
               <a
                 className="text-sm font-semibold leading-6 text-gray-100 mr-2 p-2 hover:bg-blue-500 bg-blue-600  border-white rounded-md transition-all duration-500 ease-in-out border-2 "
@@ -108,7 +159,7 @@ export default function Navbar() {
                 Log Out <span aria-hidden="true"></span>
               </a>
             </div>
-          )}
+          )} */}
         </nav>
       </header>
     </div>

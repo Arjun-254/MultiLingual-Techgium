@@ -27,7 +27,7 @@ const TranslateMessage = ({ type, lang, srcLang, content }) => {
   const [correctedText, setCorrectedText] = useState("");
 
   const mimeType = "audio/webm";
-  const ngrokurl = "https://9789-34-124-187-173.ngrok-free.app"; //everything
+  const ngrokurl = "https://d375-35-223-72-218.ngrok-free.app"; //everything
   //in built api reference
   const mediaRecorder = useRef(null);
 
@@ -110,7 +110,7 @@ const TranslateMessage = ({ type, lang, srcLang, content }) => {
       console.log(srcLang);
       console.log(lang);
       const response = await fetch(
-        "https://a4db-34-168-237-223.ngrok-free.app" + "/gtranslate", //translate different
+        ngrokurl + "/gtranslate", //translate different
         {
           method: "POST",
           headers: {
@@ -121,14 +121,14 @@ const TranslateMessage = ({ type, lang, srcLang, content }) => {
             text: content,
             src_lang: srcLang.slice(0, 2),
             tgt_lang: lang.slice(0, 2),
-            emotion: "Neutral",
+            // emotion: "Neutral",
           }),
         }
       );
 
       if (response.ok) {
         const falcon_response = await response.json();
-        setFalcon(falcon_response.data.translations[0].translatedText);
+        setFalcon(falcon_response.trans);
         console.log(falcon_response);
       } else {
         console.log("model dead");
@@ -167,11 +167,11 @@ const TranslateMessage = ({ type, lang, srcLang, content }) => {
           </h2>
           <p className="mt-2 text-sm">{content}</p>
         </div>
-        <div className="mx-1 p-5 rounded-full border-blue-200 border-4"></div>
+        {/* <div className="mx-1 p-5 rounded-full border-blue-200 border-4"></div> */}
       </div>
 
       <div className="flex flex-row justify-start items-center mr-auto pt-2 ml-1">
-        <div className="mx-1 p-5 rounded-full border-gray-300 border-4"></div>
+        {/* <div className="mx-1 p-5 rounded-full border-gray-300 border-4"></div> */}
         <div className="flex flex-col justify-start items-start w-7/12 bg-gray-300 rounded-lg p-3">
           <h2 className="text-lg font-semibold">Railway Mitra Translation🤖</h2>
           {loading ? (
